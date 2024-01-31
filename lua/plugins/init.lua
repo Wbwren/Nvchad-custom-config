@@ -248,7 +248,24 @@ local default_plugins = {
     branch = "dev",
     lazy = false,
   },
-
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    config = function()
+       require("treesitter-context").setup{
+          -- Here you can add any configuration options you want
+          -- for treesitter-context, such as:
+          enable = true, -- Enable treesitter-context by default
+          max_lines = 100, -- How many lines the context window should show
+          -- patterns = { -- Define patterns for specific languages
+          --    lua = { -- For Lua, show the context for these types of nodes
+          --       "function",
+          --       "method",
+          --    },
+          -- },
+       }
+    end,
+  }
 }
 
 local config = require("core.utils").load_config()

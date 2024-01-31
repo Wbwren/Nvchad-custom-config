@@ -1,5 +1,13 @@
 require "core"
 
+-- Vimwiki config needs to be loaded first or conflcits with other plugins
+vim.g.vimwiki_list = {{
+  path = '~/vimwiki/',
+  syntax = 'markdown',
+  ext = '.md',
+  index = 'index' -- This implicitly suggests 'index.md' due to the 'ext' setting
+}}
+
 local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
 if custom_init_path then

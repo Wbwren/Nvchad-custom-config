@@ -1,5 +1,9 @@
 require "core"
 
+-- Required for identifying file changes correctly
+vim.opt.backupcopy = "no"
+
+
 -- Vimwiki config needs to be loaded first or conflcits with other plugins
 vim.g.vimwiki_list = {{
   path = '~/vimwiki/',
